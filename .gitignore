@@ -1,2 +1,14 @@
 node_modules
 .idea
+
+mkdir -p src/components/button \
+src/components/input \
+src/components/button \
+src/components/Registration-form
+
+touch \
+src/index.jsx \
+src/utils/validator/index.js \
+src\
+src\index.jsx
+src\index.jsx

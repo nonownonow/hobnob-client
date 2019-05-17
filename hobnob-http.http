@@ -1,0 +1,28 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+POST localhost:8080/users
+Content-Type: application/json
+
+{
+  "email": "atawe@muwadha.cm",
+  "digest": "$2a$10$zEjmK3h.Yq1CHvhyW8Yy8uRSjICe8OnJq87.WEsnl0DQ2VoiFAF3m"
+}
+
+###
+GET 127.0.0.1:8080/salt?email=ih.ryu.dev@gmail.com
+Content-Type: application/json
+###
+POST localhost:8080/login
+Content-Type: application/json
+
+{
+  "email": "ih.ryu.dev@gmail.com",
+  "digest": "$2a$10$ydj3Rn.KCkliHI0bJJVkl.G9Q3/PQDuZdC4kUm0kRMx7bJyry76Ey"
+}
+### "$2a$10$JFma1Y94/0R6LzQzVbdV2.ygKMJw3sGjimLWjXV65Ex9ZhRzJZOFi"
+###
+

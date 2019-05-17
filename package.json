@@ -4,21 +4,60 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist/ && dotenv webpack",
+    "serve": "dotenv ./scripts/serve.sh",
+    "test:e2e": "yarn run test:e2e:all",
+    "test:e2e:all": "yarn run test:e2e:chrome firefox",
+    "test:e2e:chrome": "./scripts/e2e.test.sh chrome",
+    "test:e2e:firefox": "./scripts/e2e.test.sh firefox",
+    "api:init": "git submodule update --init",
+    "api:install": "yarn --cwd api install",
+    "api:serve": "yarn --cwd api run build && dotenv -e api/envs/.env.example node api/dist/index.js",
+    "api:update": "git submodule update --init --remote"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nonownonow/hobnob-client.git"
-  },
+  "repository": "git+https://github.com/nonownonow/hobnob-client.git",
   "keywords": [],
-  "author": "",
+  "author": "ryuilhwan <ih.ryu.dev@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nonownonow/hobnob-client/issues"
   },
   "homepage": "https://github.com/nonownonow/hobnob-client#readme",
   "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chance": "^1.0.18",
+    "chromedriver": "^2.38.3",
+    "copy-webpack-plugin": "^4.6.0",
+    "cucumber": "4.2.1",
+    "dotenv-cli": "^1.4.0",
+    "dotenv-export": "^2.0.0",
     "eslint": "^5.16.0",
-    "eslint-plugin-react": "^7.12.4"
+    "eslint-plugin-react": "^7.12.4",
+    "geckodriver": "^1.16.2",
+    "pushstate-server": "^3.1.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "string-replace-loader": "^2.1.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "deepmerge": "^2.1.0",
+    "dotenv": "^8.0.0",
+    "node-fetch": "^2.5.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.0"
   }
 }
